@@ -7,7 +7,6 @@ import { LanguageProvider } from './contexts/LanguageContext';
 
 function App() {
   return (
-
     <ThemeProvider>
       <LanguageProvider>
         <PageContent>
@@ -18,5 +17,4 @@ function App() {
     </ThemeProvider>
   );
 }
-
 export default App;
