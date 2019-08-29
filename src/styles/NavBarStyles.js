@@ -46,7 +46,6 @@ const styles = theme => ({
   },
   inputInput: {
     paddingTop: theme.spacing(1),
-    paddingTop: theme.spacing(1),
     paddingRight: theme.spacing(1),
     paddingLeft: theme.spacing(10),
     transition: theme.transitions.create('width'),
