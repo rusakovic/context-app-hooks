@@ -15,6 +15,8 @@ import Select from "@material-ui/core/Select";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from './styles/FormStyles';
 import { LanguageContext } from './contexts/LanguageContext';
+import { ThemeContext } from './contexts/ThemeContext';
+
 
 const words = {
   english: {
@@ -38,7 +40,9 @@ const words = {
 };
 
 function Form (props) {
-  const { language, changeLanguage } = useContext(LanguageContext)
+  const { language, changeLanguage } = useContext(LanguageContext);
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+
   const { classes } = props;
   const { email, signIn, password, remember } = words[language];
   return (
@@ -63,7 +67,7 @@ function Form (props) {
               <Input id='password' name='password' autoFocus />>
             </FormControl>
             <FormControlLabel 
-              control={<Checkbox color='primary' />} 
+              control={<Checkbox color={isDarkMode ? 'default' : 'primary'} />} 
               label={remember}
             />
             <Button 
@@ -71,7 +75,7 @@ function Form (props) {
               variant='contained' 
               type='submit' 
               fullWidth 
-              color='primary'
+              color={isDarkMode ? 'default' : 'primary'}
             >
               {signIn}
             </Button>
